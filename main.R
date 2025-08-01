@@ -2,6 +2,7 @@ library(tidyverse)
 library(here)
 
 tv_hours_table <- gss_cat %>% 
+  filter(age >= 30) %>% 
   group_by(marital) %>% 
   summarise(tvhrs = mean(tvhours, na.rm = T))
 
